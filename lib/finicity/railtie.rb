@@ -7,7 +7,6 @@ module Finicity
       if File.exists?(::Rails.root.join('config', 'finicity.yml'))
 
         yaml_file = ::YAML.load_file(::Rails.root.join('config', 'finicity.yml'))
-
         ::Finicity.configure do |config|
           config.base_url = yaml_file['base_url']
           config.partner_id = yaml_file['partner_id']

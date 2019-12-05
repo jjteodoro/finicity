@@ -110,6 +110,18 @@ module Finicity
       end
     end
 
+    def generate_finicity_connect_link(customer_id, redirect_uri)
+      request = ::Finicity::V1::Request::GenerateFinicityConnectLink.new(token, customer_id, redirect_uri)
+      request.log_request
+      response = request.generate_link
+      log_response(response)
+      if response.ok?
+        parsed_response = JSON.parse(response.body)
+      else
+        raise_generic_error!(response)
+      end
+    end
+
     def authenticate!
       request = ::Finicity::V2::Request::PartnerAuthentication.new
       response = request.authenticate

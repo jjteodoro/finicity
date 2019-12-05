@@ -29,7 +29,11 @@ module Finicity::V2
       end
 
       def url
-        ::URI.join(::Finicity.config.base_url, 'v2/partners/authentication')
+        ::URI.join(
+          ::Finicity.config.base_url, 
+          'aggregation/',
+          'v2/partners/authentication'
+        )
       end
     end
   end

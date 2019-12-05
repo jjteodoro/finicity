@@ -47,6 +47,7 @@ module Finicity::V3
       def url
         ::URI.join(
           ::Finicity.config.base_url,
+          'aggregation/',
           'v3/',
           'customers/',
           "#{customer_id}/",

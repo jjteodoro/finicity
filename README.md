@@ -22,7 +22,7 @@ You can configure the finicity gem with the following initializer
 
 ```Ruby
 Finicity.configure do |config|
-  config.base_url = "https://api.finicity.com/aggregation/"
+  config.base_url = "https://api.finicity.com/"
   config.partner_id = <partner_id>
   config.partner_secret = <partner_secret>
   config.app_key = <app_key>
